@@ -9,7 +9,11 @@ import { app, server } from "./src/socket/socket.js";
 // const app = express();
 app.use(
   cors({
-    origin:["https://chat-app-react-nikhil.vercel.app","https://chat-app-react-taupe.vercel.app"],
+    origin: [
+      "https://chat-app-react-nikhil.vercel.app",
+      "https://chat-app-react-taupe.vercel.app",
+      "https://reactchatapp.motitumbahamphe.com.np",
+    ],
     methods: ["GET", "POST", "PATCH", "DELETE", "PUT", "OPTIONS"],
     credentials: true,
   })
@@ -19,7 +23,7 @@ app.use(cookieParser());
 
 const Port = port;
 
-app.use("/api", router)
+app.use("/api", router);
 
 connectToMongoDb().then(() => {
   server.listen(Port, () => {
