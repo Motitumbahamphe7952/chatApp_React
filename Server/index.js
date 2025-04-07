@@ -9,7 +9,8 @@ import { app, server } from "./src/socket/socket.js";
 // const app = express();
 app.use(
   cors({
-    origin: `${frontend_url}`,
+    origin:["https://chat-app-react-nikhil.vercel.app","https://chat-app-react-taupe.vercel.app"],
+    methods: ["GET", "POST", "PATCH", "DELETE", "PUT", "OPTIONS"],
     credentials: true,
   })
 );
