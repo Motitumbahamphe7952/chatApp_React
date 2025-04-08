@@ -1,27 +1,3 @@
-// import { getUserDetailsFromToken } from "../helpers/getUserDetailsFromToken";
-// import { User } from "../Schema/model.js";
-// import { checkEmail } from "./checkEmail.js";
-
-// export const login = async  (req,res)=>{
-// try{
-//         const token = req.cookies.token || "";
-//         const user = await getUserDetailsFromToken(token);
-//         let _id = user._id;
-//         let email = user.email;
-//         let password = user.password;
-
-//         if(user){
-            
-
-//         }
-       
-
-// }catch(error){
-  
-    
-// }
-// }
-
 
 import { User } from "../Schema/model.js";
 import bcryptjs from "bcryptjs";
