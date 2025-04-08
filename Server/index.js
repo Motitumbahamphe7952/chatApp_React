@@ -13,6 +13,7 @@ app.use(
       "https://chat-app-react-nikhil.vercel.app",
       "https://chat-app-react-taupe.vercel.app",
       "https://reactchatapp.motitumbahamphe.com.np",
+      "https://chatapp-react-qczk.onrender.com",
     ],
     methods: ["GET", "POST", "PATCH", "DELETE", "PUT", "OPTIONS"],
     credentials: true,
