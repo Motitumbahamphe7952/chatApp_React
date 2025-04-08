@@ -29,7 +29,7 @@ const Sidebar = () => {
 
       socket.on("conversation", (data) => {
         console.log("conversation", data);
-        const conversationUserData = data.map((conversationUser, index) => {
+        const conversationUserData = data?.map((conversationUser, index) => {
           if (
             conversationUser?.sender?._id === conversationUser?.receiver?._id
           ) {
