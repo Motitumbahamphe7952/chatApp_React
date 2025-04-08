@@ -124,7 +124,7 @@ const Sidebar = () => {
               </p>
             </div>
           )}
-          {allUser.map((conv, index) => {
+          {allUser?.map((conv, index) => {
             return (
               <NavLink
                 to={"/" + conv?.userDetails?._id}

@@ -1,25 +1,3 @@
-// import React, { useEffect } from "react";
-// import { useParams } from "react-router-dom";
-
-// const MessagePage = () => {
-//   const params = useParams();
-//   const socketConnection = useSelector((state) => state?.user?.socketConnection);
-//   console.log(params.userId);
-
-//   useEffect(() => {
-//     if(socketConnection){
-//       socketConnection.emit("message-page", params.userId);
-//     }
-//   }, [socketConnection]);
-
-//   return(
-//     <div>
-//       MessagePage
-//     </div>
-//     );
-// };
-
-// export default MessagePage;
 
 import React, { useEffect, useRef, useState } from "react";
 import { data, Link, useParams } from "react-router-dom";
@@ -37,7 +15,6 @@ import { LuSendHorizontal } from "react-icons/lu";
 import Loading from "./Loading";
 import backgroundImage from "/bgimage3.png";
 import moment from "moment";
-import { all } from "axios";
 const MessagePage = () => {
   const params = useParams();
   const { socket } = useSocket(); // ✅ Get socket from context
@@ -248,7 +225,7 @@ const MessagePage = () => {
       <section className="h-[calc(100vh-8rem)] overflow-x-hidden overflow-y-scroll scrollbar relative bg-slate-400/30">
         {/* all messsages show here */}
         <div ref={currentMessage} className="flex flex-col gap-2 p-2 py-2">
-          {allMessage.map((msg, index) => {
+          {allMessage?.map((msg, index) => {
             return (
               <div
                 key={index}
