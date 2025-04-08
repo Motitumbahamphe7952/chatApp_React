@@ -29,7 +29,13 @@ const Sidebar = () => {
 
       socket.on("conversation", (data) => {
         console.log("conversation", data);
-        const conversationUserData = data?.map((conversationUser, index) => {
+
+        if (!Array.isArray(data)) {
+          console.error("Data is not an array:", data);
+          return;  // Prevent .map() from being called on invalid data
+        }
+  
+        const conversationUserData = data.map((conversationUser, index) => {
           if (
             conversationUser?.sender?._id === conversationUser?.receiver?._id
           ) {
