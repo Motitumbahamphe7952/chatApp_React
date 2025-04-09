@@ -5,6 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { SocketProvider } from "./socketContext";
 import { useDispatch } from "react-redux";
 import { setToken } from "./redux/userSlice";
+import axios from "axios";
 const App = () => {
   const dispatch = useDispatch();
 
