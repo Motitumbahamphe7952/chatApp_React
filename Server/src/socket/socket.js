@@ -14,6 +14,8 @@ const io = new Server(server, {
     origin: `${frontend_url}`,
     credentials: true,
   },
+  transports: ["websocket"], // Force WebSocket transport
+  cookie: true
 });
 
 const onlineUser = new Set();
