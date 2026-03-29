@@ -7,33 +7,50 @@ import Home from "../pages/Home.jsx";
 import RegisterPage from "../pages/RegisterPage.jsx";
 import Authlayouts from "../layout/layout.jsx";
 import LoginPage from "../pages/LoginPage.jsx";
+
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     children: [
       {
-        path: "register",
-        element:<Authlayouts><RegisterPage /></Authlayouts>
+        index: true,
+        element: (
+          <Authlayouts>
+            <RegisterPage />
+          </Authlayouts>
+        ),
       },
       {
         path: "email",
-        element: <Authlayouts><CheckEmailPage /></Authlayouts>
+        element: (
+          <Authlayouts>
+            <CheckEmailPage />
+          </Authlayouts>
+        ),
       },
       {
         path: "password",
-        element: <Authlayouts><CheckPasswordPage /></Authlayouts>
+        element: (
+          <Authlayouts>
+            <CheckPasswordPage />
+          </Authlayouts>
+        ),
       },
       {
         path: "login",
-        element: <Authlayouts><LoginPage /></Authlayouts>
+        element: (
+          <Authlayouts>
+            <LoginPage />
+          </Authlayouts>
+        ),
       },
       {
-        path: "",
+        path: "home",
         element: <Home />,
         children: [
           {
-            path: ':userId',
+            path: ":userId",
             element: <MessagePage />,
           },
         ],

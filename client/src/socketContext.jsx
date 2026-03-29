@@ -62,8 +62,16 @@ const SocketContext = createContext(null);
 export const SocketProvider = ({ children }) => {
   const [socket, setSocket] = useState(null);
   const [onlineUsers, setOnlineUsers] = useState([]);
-
+  
+  const token = localStorage.getItem("token");
+   
   useEffect(() => {
+    // Check if token exists before establishing a connection
+    if (!token) {
+      console.error("No token found in localStorage. Cannot connect to WebSocket.");
+      console.log("Token retrieved from localStorage:", token);
+      return;
+    }
     // Establish a connection to the backend WebSocket server
     const newSocket = io(backendURL, {
       // Ensure withCredentials is true if your server requires CORS with credentials
@@ -101,7 +109,7 @@ export const SocketProvider = ({ children }) => {
     return () => {
       newSocket.disconnect();
     };
-  }, []);
+  }, [token]);
 
   return (
     <SocketContext.Provider value={{ socket, onlineUsers }}>

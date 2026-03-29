@@ -192,7 +192,7 @@ const RegisterPage = () => {
 
         <p className="mt-4 my-3 text-center">
           Already have an Account ?{" "}
-          <Link to={"/email"} className="hover:text-secondary hover:underline">
+          <Link to={"/login"} className="hover:text-secondary hover:underline">
             Login
           </Link>
         </p>

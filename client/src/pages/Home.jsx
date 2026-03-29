@@ -109,7 +109,14 @@ const Home = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
-  const { onlineUsers } = useSocket(); // ✅ Get online users from context
+  // const { onlineUsers } = useSocket(); // ✅ Get online users from context
+  const socketContext = useSocket();
+
+  if (!socketContext) {
+    return <div>Loading chat connection...</div>;
+  }
+
+  const { onlineUsers } = socketContext;
 
   console.log("redux user", user);
   console.log("online users", onlineUsers); // ✅ Now onlineUsers come from Context API
@@ -138,7 +145,7 @@ const Home = () => {
     fetchUserDetails();
   }, []);
 
-  const basePath = location.pathname === "/";
+  const basePath = location.pathname === "/home";
   return (
     <div className="grid lg:grid-cols-[320px_auto] h-screen max-h-screen">
       <section className={`bg-white ${!basePath && "hidden"} lg:block`}>

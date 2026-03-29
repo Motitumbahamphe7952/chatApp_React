@@ -16,6 +16,7 @@ const io = new Server(server, {
   },
   transports: ["websocket"], // Force WebSocket transport
   cookie: true
+  
 });
 
 const onlineUser = new Set();

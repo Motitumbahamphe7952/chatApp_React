@@ -133,7 +133,7 @@ const Sidebar = () => {
           {allUser?.map((conv, index) => {
             return (
               <NavLink
-                to={"/" + conv?.userDetails?._id}
+                to={"/home/" + conv?.userDetails?._id}
                 key={conv?._id}
                 className="flex items-center gap-2 py-3 px-2 m-0.5 border-2 border-transparent hover:border-primary rounded hover:bg-slate-50"
               >
